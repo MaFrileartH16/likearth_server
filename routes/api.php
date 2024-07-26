@@ -9,4 +9,8 @@
   Route::middleware('auth:api')->group(function () {
     Route::get('user', [AuthController::class, 'user']);
     Route::post('logout', [AuthController::class, 'logout']);
-  }); 
+  });
+  
+  Route::get('/', function () {
+    return response()->json(['message' => 'Hello World!']);
+  });
